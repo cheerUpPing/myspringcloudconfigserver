@@ -1,0 +1,19 @@
+server:
+  port: 8885
+spring:
+  application:
+    name: service-a
+  cloud:
+    config:
+      profile: dev
+      label: master
+      uri: http://localhost:8883/
+eureka:
+  client:
+    #发现服务
+    fetch-registry: true
+    #注册服务
+    register-with-eureka: true
+    #服务注册中心地址
+    service-url:
+      defaultZone: http://localhost:8881/eureka/
